@@ -1,34 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   checker.h                                          :+:      :+:    :+:   */
+/*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2017/07/21 00:06:40 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/09 20:11:35 by eLopez           ###   ########.fr       */
+/*   Created: 2018/02/09 20:11:58 by eLopez            #+#    #+#             */
+/*   Updated: 2018/02/09 20:13:56 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHECKER_H
-# define CHECKER_H
-# include <libft.h>
-# include <ft_printf.h>
-# include <get_next_line.h>
-# include <sys/types.h>
-# include <sys/stat.h>
-# include <fcntl.h>
-# define ABS(x) ((x) < 0 ? -(x) : (x))
+#include <checker.h>
 
-typedef struct	s_checker
+void	c_exit(t_check *e, int error)
 {
-	int	*a;
-	int	*b;
-	int	n_a;
-	int	n_b;
-}				t_check;
-
-void	init(t_check *e, int argc, char **argv);
-void	c_exit(t_check *e, int error);
-
-#endif
+	if (error)
+		write(2, "Error\n", 6);
+	free(e->a);
+	free(e->b);
+	exit(0);
+}

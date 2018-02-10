@@ -22,7 +22,7 @@ C_SRC	= main.c
 PS_ODIR	:= sources/ps_obj
 C_ODIR	:= sources/c_obj
 PS_OBJ	= $(PS_ODIR)/main.o
-C_OBJ	= $(C_ODIR)/main.o
+C_OBJ	= $(C_ODIR)/main.o $(C_ODIR)/init.o $(C_ODIR)/exit.o
 INC		= sources/includes
 LIB		= sources/libft.a
 EX1		= push_swap
@@ -32,16 +32,16 @@ EX2		= checker
 all: $(LIB) $(EX1) $(EX2)
 
 $(EX1): $(PS_OBJ)
-	@$(CC) $(CFLAGS) -I $(INC) -o $(EX1) $(PS_OBJ) -L./sources/ -lft
+	$(CC) $(CFLAGS) -I $(INC) -o $(EX1) $(PS_OBJ) -L./sources/ -lft
 
 $(EX2): $(C_OBJ)
-	@$(CC) $(CFLAGS) -I $(INC) -o $(EX2) $(C_OBJ) -L./sources/ -lft
+	$(CC) $(CFLAGS) -I $(INC) -o $(EX2) $(C_OBJ) -L./sources/ -lft
 
 $(PS_ODIR)/%.o:sources/ps_src/%.c | $(PS_ODIR)
-	@$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
+	$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
 
 $(C_ODIR)/%.o:sources/c_src/%.c | $(C_ODIR)
-	@$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
+	$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
 
 $(PS_ODIR):
 	@mkdir $(PS_ODIR)
