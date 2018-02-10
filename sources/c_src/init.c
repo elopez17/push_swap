@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 19:33:20 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/09 21:25:08 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/09 22:32:46 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ static void	get_stack(t_check *e, char **argv)
 
 void	init(t_check *e, int argc, char **argv)
 {
+	e->instructions = ft_strdup("");
 	e->n_a = argc - 1;
 	e->n_b = 0;
 	e->a = (int*)ft_memalloc(sizeof(int) * e->n_a);
