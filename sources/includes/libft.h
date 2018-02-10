@@ -6,7 +6,7 @@
 /*   By: elopez <marvin@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/03/18 23:26:33 by elopez            #+#    #+#             */
-/*   Updated: 2018/02/09 21:06:57 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/10 00:07:53 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <string.h>
 # include <wchar.h>
 # include <stdint.h>
+# define SWAPINT(a, b)({int t_temp_var=(a);(a)=(b);(b)=t_temp_var;})
 
 size_t			ft_strlcat(char *dst, const char *src, size_t size);
 long long		ft_pow(long long x, long long y);
