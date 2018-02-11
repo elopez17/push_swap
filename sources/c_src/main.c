@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 19:32:08 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/11 00:20:57 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 11:52:18 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int main(int argc, char **argv)
 {
 	t_check	e;
 
-	if (argc <= 1)
+	if (argc <= 1 || (argc == 2 && argv[1][0] == '-'))
 		return (0);
 	init(&e, argc, argv);
 	get_instructions(&e);
@@ -43,6 +43,8 @@ int main(int argc, char **argv)
 		ft_printf("%{GR}OK%{nc}\n");
 	else
 		ft_printf("%{RD}KO%{nc}\n");
+	if (e.options & 4)
+		ft_printf("number of instructions: %d\n", e.count);
 	c_exit(&e, 0);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/10 19:07:18 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 19:07:22 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 12:00:37 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,5 +31,6 @@ void	get_instructions(t_check *e)
 		}
 		e->instructions = ft_strmer(e->instructions,
 											ft_strmer(ft_strdup(" "), line));
+		++e->count;
 	}
 }

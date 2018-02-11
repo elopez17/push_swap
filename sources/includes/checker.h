@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 00:06:40 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 00:54:24 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 11:39:56 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ typedef struct	s_checker
 	int		n_a;
 	int		n_b;
 	char	*instructions;
+	int		options;
+	int		count;
 }				t_check;
 
 void	init(t_check *e, int argc, char **argv);

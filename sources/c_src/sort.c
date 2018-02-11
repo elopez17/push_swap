@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 23:52:05 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 01:35:02 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 12:09:43 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,20 @@ static void	print_stacks(t_check *e)
 	i = -1;
 	while (++i < e->n_a || i < e->n_b)
 	{
+		if (e->options & 8)
+			ft_printf("%{TQ}");
 		if (i < e->n_a)
 			ft_printf("%d\t", e->a[i]);
 		else
 			ft_printf("\t");
+		if (e->options & 8)
+			ft_printf("%{PU}");
 		if (i < e->n_b)
 			ft_printf("%d\n", e->b[i]);
 		else
 			ft_printf("\n");
 	}
-	ft_printf("-------------\n");
+	ft_printf("-------------\n%{nc}");
 }
 
 static void sort_stack2(t_check *e, char *instruct)
@@ -62,7 +66,8 @@ void	sort_stack(t_check *e)
 	instructs = ft_strsplit(e->instructions, ' ');
 	while (instructs[++i])
 	{
-		print_stacks(e);
+		(e->options & 2) ? print_stacks(e) : 0;
+		(e->options & 1) ? ft_printf("%{rd}%s\n%{nc}", instructs[i]) : 0;
 		if (ft_strequ(instructs[i], "sa") && e->n_a > 1)
 			SWAPINT(e->a[0], e->a[1]);
 		else if (ft_strequ(instructs[i], "sb") && e->n_b > 1)
@@ -79,6 +84,6 @@ void	sort_stack(t_check *e)
 		else
 			sort_stack2(e, instructs[i]);
 	}
-	print_stacks(e);
+	(e->options & 2) ? print_stacks(e) : 0;
 	free_2d(&instructs);
 }

@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 19:33:20 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/09 22:32:46 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 12:04:16 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,26 @@ static void	get_stack(t_check *e, char **argv)
 
 }
 
+static void	get_options(t_check *e, int *argc, char ***argv)
+{
+	--(*argc);
+	++(*argv);
+	if (ft_strchr(**argv, 'i'))
+		e->options |= 1;
+	if (ft_strchr(**argv, 'v'))
+		e->options |= 2;
+	if (ft_strchr(**argv, 'n'))
+		e->options |= 4;
+	if (ft_strchr(**argv, 'c'))
+		e->options |= 8;
+}
+
 void	init(t_check *e, int argc, char **argv)
 {
+	e->count = 0;
+	e->options = 0;
+	if (argv[1][0] == '-')
+		get_options(e, &argc, &argv);
 	e->instructions = ft_strdup("");
 	e->n_a = argc - 1;
 	e->n_b = 0;
