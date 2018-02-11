@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   exit.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/02/09 19:32:08 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 19:19:24 by eLopez           ###   ########.fr       */
+/*   Created: 2018/02/09 20:11:58 by eLopez            #+#    #+#             */
+/*   Updated: 2018/02/10 19:02:39 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
 
-int main(int argc, char **argv)
+void	ps_exit(t_pswap *e, int error)
 {
-	t_pswap	e;
-
-	if (argc <= 1)
-		return (0);
-	init(&e, argc, argv);
-	print_stacks(&e);
-	ps_exit(&e, 0);
-	return (0);
+	if (error)
+		write(2, "Error\n", 6);
+	free(e->a);
+	free(e->b);
+	exit(0);
 }
