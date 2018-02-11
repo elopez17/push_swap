@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/10 20:44:23 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 22:01:20 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/10 22:15:01 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,5 +114,5 @@ char	*make_move(t_pswap *e)
 		rev_rot_stack(e->b, e->n_b);
 		return (ft_strdup("rrb"));
 	}
-	return (ft_strdup("pa"))
+	return (ft_strdup("pa"));
 }
