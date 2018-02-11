@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 20:11:58 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 19:02:39 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 00:36:09 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 void	ps_exit(t_pswap *e, int error)
 {
 	if (error)
-		write(2, "Error\n", 6);
+		write(2, "\x1b[31;01mError\x1b[0m\n",
+									ft_strlen("\x1b[31;01mError\x1b[0m\n"));
 	free(e->a);
 	free(e->b);
 	exit(0);
