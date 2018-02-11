@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 00:06:40 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 19:12:05 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/10 20:21:35 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@
 # include <sys/stat.h>
 # include <fcntl.h>
 # define ABS(x) ((x) < 0 ? -(x) : (x))
+# define FALSE 0
+# define TRUE 1
 
 typedef struct	s_push_swap
 {
