@@ -6,11 +6,43 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/10 20:44:23 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 22:15:01 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/10 23:23:04 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <push_swap.h>
+
+static int	a_is_sorted(t_pswap *e)
+{
+	int	i;
+	int	j;
+
+	i = e->n_a;
+	while (--i > 0)
+	{
+		j = i;
+		while (--j >= 0)
+			if (e->a[j] > e->a[i])
+				return (0);
+	}
+	return (1);
+}
+
+static int	b_is_sorted(t_pswap *e)
+{
+	int	i;
+	int	j;
+
+	i = -1;
+	while (++i < e->n_b - 1)
+	{
+		j = i;
+		while (++j < e->n_b)
+			if (e->b[j] > e->b[i])
+				return (0);
+	}
+	return (1);
+}
 
 static int	check_rra(t_pswap *e)
 {
@@ -114,5 +146,11 @@ char	*make_move(t_pswap *e)
 		rev_rot_stack(e->b, e->n_b);
 		return (ft_strdup("rrb"));
 	}
+	if (e->n_a > 2 && !a_is_sorted(e))
+	{
+		push_to_b(e);
+		return (ft_strdup("pb"));
+	}
+	push_to_a(e);
 	return (ft_strdup("pa"));
 }

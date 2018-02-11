@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 00:06:40 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 20:44:18 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 00:09:20 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ void	push_to_a(t_pswap *e);
 void	push_to_b(t_pswap *e);
 void	rot_stack(int *stack, int n);
 void	rev_rot_stack(int *stack, int n);
-void	print_stacks(t_pswap *e);
 void	ps_exit(t_pswap *e, int error);
 
 #endif

@@ -29,21 +29,25 @@ INC		= sources/includes
 LIB		= sources/libft.a
 EX1		= push_swap
 EX2		= checker
+ARGS	= 1 5 2 4 3
 
 
 all: $(LIB) $(EX1) $(EX2)
 
+test: $(EX1) $(EX2)
+	./$(EX1) $(ARGS) | ./$(EX2) $(ARGS)
+
 $(EX1): $(PS_OBJ)
-	$(CC) $(CFLAGS) -I $(INC) -o $(EX1) $(PS_OBJ) -L./sources/ -lft
+	@$(CC) $(CFLAGS) -I $(INC) -o $(EX1) $(PS_OBJ) -L./sources/ -lft
 
 $(EX2): $(C_OBJ)
-	$(CC) $(CFLAGS) -I $(INC) -o $(EX2) $(C_OBJ) -L./sources/ -lft
+	@$(CC) $(CFLAGS) -I $(INC) -o $(EX2) $(C_OBJ) -L./sources/ -lft
 
 $(PS_ODIR)/%.o:sources/ps_src/%.c | $(PS_ODIR)
-	$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
+	@$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
 
 $(C_ODIR)/%.o:sources/c_src/%.c | $(C_ODIR)
-	$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
+	@$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
 
 $(PS_ODIR):
 	@mkdir $(PS_ODIR)
@@ -65,4 +69,4 @@ fclean: clean
 
 re: fclean all
 
-.PHONY: clean fclean all re
+.PHONY: clean fclean all re test

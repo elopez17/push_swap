@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 19:32:08 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 20:39:57 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 00:08:08 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,12 +38,10 @@ int main(int argc, char **argv)
 	if (argc <= 1)
 		return (0);
 	init(&e, argc, argv);
-	print_stacks(&e);
 	while (is_sorted(&e) == FALSE)
 	{
 		ft_printf("%s\n", (instruction = make_move(&e)));
 		ft_strdel(&instruction);
-		print_stacks(&e);
 	}
 	ps_exit(&e, 0);
 	return (0);
