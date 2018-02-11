@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 00:06:40 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 20:21:35 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/10 20:44:18 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ typedef struct	s_push_swap
 }				t_pswap;
 
 void	init(t_pswap *e, int argc, char **argv);
-void	sort_stack(t_pswap *e);
+char	*make_move(t_pswap *e);
 void	push_to_a(t_pswap *e);
 void	push_to_b(t_pswap *e);
 void	rot_stack(int *stack, int n);

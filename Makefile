@@ -17,12 +17,12 @@ TURQ	= \x1b[36m
 WHT		= \x1b[37m
 CC		= gcc
 CFLAGS	= -Wall -Wextra
-PS_SRC	= main.c init.c exit.c algos.c printstack.c
+PS_SRC	= main.c init.c exit.c algos.c printstack.c move.c
 C_SRC	= main.c init.c exit.c instructions.c sort.c algos.c
 PS_ODIR	:= sources/ps_obj
 C_ODIR	:= sources/c_obj
 PS_OBJ	= $(PS_ODIR)/main.o $(PS_ODIR)/init.o $(PS_ODIR)/exit.o \
-		  $(PS_ODIR)/algos.o $(PS_ODIR)/printstack.o
+		  $(PS_ODIR)/algos.o $(PS_ODIR)/printstack.o $(PS_ODIR)/move.o
 C_OBJ	= $(C_ODIR)/main.o $(C_ODIR)/init.o $(C_ODIR)/exit.o \
 		  $(C_ODIR)/instructions.o $(C_ODIR)/sort.o $(C_ODIR)/algos.o
 INC		= sources/includes
