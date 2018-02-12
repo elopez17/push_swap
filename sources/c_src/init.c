@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 19:33:20 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/11 12:04:16 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 17:48:39 by elopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,6 @@ static void	get_stack(t_check *e, char **argv)
 			if (e->a[j] == e->a[i])
 				c_exit(e, -1);
 	}
-
 }
 
 static void	get_options(t_check *e, int *argc, char ***argv)
@@ -65,7 +64,7 @@ static void	get_options(t_check *e, int *argc, char ***argv)
 		e->options |= 8;
 }
 
-void	init(t_check *e, int argc, char **argv)
+void		init(t_check *e, int argc, char **argv)
 {
 	e->count = 0;
 	e->options = 0;

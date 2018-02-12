@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 23:52:05 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/11 12:09:43 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 17:52:58 by elopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,11 @@ static void	print_stacks(t_check *e)
 	ft_printf("-------------\n%{nc}");
 }
 
-static void sort_stack2(t_check *e, char *instruct)
+static void	sort_stack2(t_check *e, char *instruct)
 {
-	if (ft_strequ(instruct, "ra") && e->n_a > 1)
+	if (ft_strequ(instruct, "pb") && e->n_a > 0)
+		push_to_b(e);
+	else if (ft_strequ(instruct, "ra") && e->n_a > 1)
 		rot_stack(e->a, e->n_a);
 	else if (ft_strequ(instruct, "rb") && e->n_b > 1)
 		rot_stack(e->b, e->n_b);
@@ -57,7 +59,7 @@ static void sort_stack2(t_check *e, char *instruct)
 	}
 }
 
-void	sort_stack(t_check *e)
+void		sort_stack(t_check *e)
 {
 	char	**instructs;
 	int		i;
@@ -79,8 +81,6 @@ void	sort_stack(t_check *e)
 		}
 		else if (ft_strequ(instructs[i], "pa") && e->n_b > 0)
 			push_to_a(e);
-		else if (ft_strequ(instructs[i], "pb") && e->n_a > 0)
-			push_to_b(e);
 		else
 			sort_stack2(e, instructs[i]);
 	}

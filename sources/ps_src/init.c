@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 19:33:20 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/10 19:05:51 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 17:57:35 by elopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,10 +48,9 @@ static void	get_stack(t_pswap *e, char **argv)
 			if (e->a[j] == e->a[i])
 				ps_exit(e, -1);
 	}
-
 }
 
-void	init(t_pswap *e, int argc, char **argv)
+void		init(t_pswap *e, int argc, char **argv)
 {
 	e->n_a = argc - 1;
 	e->n_b = 0;

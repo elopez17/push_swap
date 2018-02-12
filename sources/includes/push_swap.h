@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 00:06:40 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/11 00:09:20 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 18:03:40 by elopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,17 @@ typedef struct	s_push_swap
 	int		n_b;
 }				t_pswap;
 
-void	init(t_pswap *e, int argc, char **argv);
-char	*make_move(t_pswap *e);
-void	push_to_a(t_pswap *e);
-void	push_to_b(t_pswap *e);
-void	rot_stack(int *stack, int n);
-void	rev_rot_stack(int *stack, int n);
-void	ps_exit(t_pswap *e, int error);
+void			init(t_pswap *e, int argc, char **argv);
+char			*make_move(t_pswap *e);
+void			push_to_a(t_pswap *e);
+void			push_to_b(t_pswap *e);
+void			rot_stack(int *stack, int n);
+void			rev_rot_stack(int *stack, int n);
+int				a_is_sorted(t_pswap *e);
+int				check_rra(t_pswap *e);
+int				check_rrb(t_pswap *e);
+int				check_ra(t_pswap *e);
+int				check_rb(t_pswap *e);
+void			ps_exit(t_pswap *e, int error);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 19:32:08 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/11 11:52:18 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/11 17:47:42 by elopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ static int	is_sorted(t_check *e)
 	return (1);
 }
 
-int main(int argc, char **argv)
+int			main(int argc, char **argv)
 {
 	t_check	e;
 
