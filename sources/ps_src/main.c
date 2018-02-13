@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 19:32:08 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/11 17:57:05 by elopez           ###   ########.fr       */
+/*   Updated: 2018/02/13 02:10:50 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int			main(int argc, char **argv)
 	if (argc <= 1)
 		return (0);
 	init(&e, argc, argv);
+//	split_stack(&e);
 	while (is_sorted(&e) == FALSE)
 	{
 		ft_printf("%s\n", (instruction = make_move(&e)));

@@ -8,7 +8,7 @@ then
 	make re
 fi
 
-for i in {0..10}
+for i in {0..9}
 do
 	if (($i % 2 == 0))
 	then

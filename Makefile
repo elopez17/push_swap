@@ -31,6 +31,7 @@ EX1		= push_swap
 EX2		= checker
 
 all: $(LIB) $(EX1) $(EX2)
+	@printf "\n"
 
 $(EX1): $(PS_OBJ)
 	@$(CC) $(CFLAGS) -I $(INC) -o $(EX1) $(PS_OBJ) -L./sources/ -lft
@@ -40,9 +41,11 @@ $(EX2): $(C_OBJ)
 
 $(PS_ODIR)/%.o:sources/ps_src/%.c | $(PS_ODIR)
 	@$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
+	@printf "$(RED)▋"
 
 $(C_ODIR)/%.o:sources/c_src/%.c | $(C_ODIR)
 	@$(CC) $(CFLAGS) -I $(INC) -o $@ -c $<
+	@printf "$(RED)▋"
 
 $(PS_ODIR):
 	@mkdir $(PS_ODIR)

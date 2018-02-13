@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/02/09 20:11:58 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/11 12:13:31 by eLopez           ###   ########.fr       */
+/*   Updated: 2018/02/13 01:40:18 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,6 @@ void	ps_exit(t_pswap *e, int error)
 									ft_strlen("\x1b[31;01mError\x1b[0m\n"));
 	free(e->a);
 	free(e->b);
+	free(e->sorted);
 	exit(0);
 }

@@ -6,7 +6,7 @@
 /*   By: eLopez <elopez@42.fr>                      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2017/07/21 00:06:40 by eLopez            #+#    #+#             */
-/*   Updated: 2018/02/11 18:03:40 by elopez           ###   ########.fr       */
+/*   Updated: 2018/02/13 01:05:34 by eLopez           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,9 @@ typedef struct	s_push_swap
 	int		*b;
 	int		n_a;
 	int		n_b;
+	int		mid;
+	int		n;
+	int		*sorted;
 }				t_pswap;
 
 void			init(t_pswap *e, int argc, char **argv);
