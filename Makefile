@@ -29,13 +29,8 @@ INC		= sources/includes
 LIB		= sources/libft.a
 EX1		= push_swap
 EX2		= checker
-ARGS	= 1 5 2 4 3
-
 
 all: $(LIB) $(EX1) $(EX2)
-
-test: $(EX1) $(EX2)
-	./$(EX1) $(ARGS) | ./$(EX2) $(ARGS)
 
 $(EX1): $(PS_OBJ)
 	@$(CC) $(CFLAGS) -I $(INC) -o $(EX1) $(PS_OBJ) -L./sources/ -lft
