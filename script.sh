@@ -1,6 +1,14 @@
 declare -a ARGS
 
-for i in {0..99}
+if [[ "$1" == "re" ]]
+then
+	make re
+elif [[ "$2" == "re" ]]
+then
+	make re
+fi
+
+for i in {0..10}
 do
 	if (($i % 2 == 0))
 	then
@@ -12,4 +20,13 @@ done
 
 echo "${ARGS[@]}"
 
-./push_swap ${ARGS[@]} | ./checker -n ${ARGS[@]}
+if [[ $1 == *"-"* ]]
+then
+	options=$1
+elif [[ $2 == *"-"* ]]
+then
+	options=$2
+else
+	options=""
+fi
+./push_swap ${ARGS[@]} | ./checker $options ${ARGS[@]}
