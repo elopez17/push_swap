@@ -8,9 +8,9 @@ then
 	make re
 fi
 
-for i in {0..9}
+for i in {0..99}
 do
-	if (($i % 2 == 0))
+	if (($i % 8 == 0))
 	then
 		ARGS[$i]=$i
 	else
